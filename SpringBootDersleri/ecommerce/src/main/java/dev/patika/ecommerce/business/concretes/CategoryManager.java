@@ -3,8 +3,9 @@ package dev.patika.ecommerce.business.concretes;
 import dev.patika.ecommerce.business.abstracts.ICategoryService;
 import dev.patika.ecommerce.dao.CategoryRepo;
 import dev.patika.ecommerce.entities.Category;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class CategoryManager implements ICategoryService {
     private final CategoryRepo categoryRepo;
 

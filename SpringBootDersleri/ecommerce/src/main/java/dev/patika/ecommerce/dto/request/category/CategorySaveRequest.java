@@ -12,7 +12,6 @@ import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.Empty;
 @NoArgsConstructor
 public class CategorySaveRequest {
 
-    @NotNull
-    @NotEmpty
+    @NotNull(message = "Kategori adı boş veya null olamaz.")
     private String name;
 }
