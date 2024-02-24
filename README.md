@@ -1,1 +1,1 @@
-![](img/1.png)
+![](kutuphane/img/1.png)
