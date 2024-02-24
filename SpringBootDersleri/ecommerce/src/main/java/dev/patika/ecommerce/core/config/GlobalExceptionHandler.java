@@ -1,5 +1,7 @@
-package dev.patika.ecommerce.core.config.modelMapper;
+package dev.patika.ecommerce.core.config;
 
+import dev.patika.ecommerce.core.exception.NotFoundException;
+import dev.patika.ecommerce.core.result.Result;
 import dev.patika.ecommerce.core.result.ResultData;
 import dev.patika.ecommerce.core.utilies.Msg;
 import dev.patika.ecommerce.core.utilies.ResultHelper;
@@ -18,6 +20,11 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<Result>  handleNotFoundException(NotFoundException e){
+        return new ResponseEntity<>(ResultHelper.notFoundError(e.getMessage()) ,HttpStatus.NOT_FOUND);
+    }
 
 
     @ExceptionHandler(MethodArgumentNotValidException.class)   // onemli sor

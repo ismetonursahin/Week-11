@@ -9,7 +9,6 @@ public class Result {
     private String code;
 
 
-
     public Result(boolean status, String message, String code) {
         this.status = status;
         this.message = message;
